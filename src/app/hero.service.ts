@@ -79,6 +79,20 @@ private log(message: string) {
     this.messageService.add('HeroService: ' + message);
 }
 
+/**
+ * Search by term
+ */
+/* GET heroes whose name contains search term */
+searchHeroes(term: string): Observable<Hero[]> {
+  if (!term.trim()) {
+    // if not search term, return empty hero array.
+    return of([]);
+  }
+  return this.httpClient.get<Hero[]>(`api/heroes/?name=${term}`).pipe(
+    tap(_ => this.log(`found heroes matching "${term}"`)),
+    catchError(this.handleError<Hero[]>('searchHeroes', []))
+  );
+}
   /**
  * Handle Http operation that failed.
  * Let the app continue.
