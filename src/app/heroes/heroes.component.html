@@ -1,0 +1,37 @@
+
+  <!-- <h2>{{ hero.name }} Details </h2>
+  <div><span>id : </span> {{hero.id}} </div>
+  <div><span>name : </span> {{hero.name}} </div> -->
+
+  <!-- <h2> {{ villains.name}} Villains Data</h2>
+  <div><span>id :</span> {{ villains.id}}</div>
+  <div><span>name :</span> {{ villains.name}}</div>
+  <div><span>type :</span> {{ villains.type}}</div> -->
+
+  <!-- <div>
+    <label>name:
+      <input [(ngModel)]="hero.name" placeholder="name">
+    </label>
+</div> -->
+
+<h2>My Heroes</h2>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
+
+
+

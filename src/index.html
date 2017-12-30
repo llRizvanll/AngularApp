@@ -2,13 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>TestApp</title>
-  <base href="/">
+  <title>Tour of Heroes</title>
+  <script>document.write('<base href="' + document.location + '" />');</script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+    <script src="https://unpkg.com/zone.js@0.7.4?main=browser"></script>
+    <script src="https://unpkg.com/systemjs@0.19.39/dist/system.src.js"></script>
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('main.js').catch(function(err){ console.error(err); });
+    </script>
+    </head>
+    
 <body>
   <app-root></app-root>
 </body>
 </html>
+
+
+<!-- 
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
